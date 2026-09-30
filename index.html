@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXUS-SNIFF | Network Traffic Analyzer</title>
+
+    <!-- CSS is in THE SAME FOLDER -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <div class="scan-line"></div>
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+        <div class="brand">
+            <span class="brand-symbol">◈</span>
+            NEXUS-SNIFF
+        </div>
+
+        <div class="connection-status">
+            <span id="statusDot" class="status-dot offline"></span>
+            <span id="statusText">BACKEND OFFLINE</span>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="category">
+                    CYBERSECURITY // NETWORK INTELLIGENCE
+                </div>
+
+                <h1>
+                    NETWORK
+                    <span>TRAFFIC</span>
+                    ANALYZER
+                </h1>
+
+                <p>
+                    Real-time packet monitoring and protocol
+                    analysis powered by Python and Scapy.
+                </p>
+
+                <div class="technology">
+                    PYTHON
+                    <b>•</b>
+                    SCAPY
+                    <b>•</b>
+                    FLASK
+                </div>
+
+            </div>
+
+
+            <!-- CONTROL PANEL -->
+            <div class="control-panel">
+
+                <div class="panel-header">
+                    CONTROL // TERMINAL
+                </div>
+
+                <button
+                    class="cyber-button start"
+                    onclick="startCapture()"
+                >
+                    <span>▶</span>
+                    START CAPTURE
+                </button>
+
+                <button
+                    class="cyber-button stop"
+                    onclick="stopCapture()"
+                >
+                    <span>■</span>
+                    STOP CAPTURE
+                </button>
+
+                <button
+                    class="cyber-button clear"
+                    onclick="clearPackets()"
+                >
+                    <span>⟳</span>
+                    CLEAR DATA
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="statistics">
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    TOTAL PACKETS
+                </div>
+
+                <div
+                    id="total"
+                    class="stat-value green"
+                >
+                    0
+                </div>
+
+                <div class="stat-symbol">
+                    ◈
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    TCP TRAFFIC
+                </div>
+
+                <div
+                    id="tcp"
+                    class="stat-value cyan"
+                >
+                    0
+                </div>
+
+                <div class="stat-symbol">
+                    ⬡
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    UDP TRAFFIC
+                </div>
+
+                <div
+                    id="udp"
+                    class="stat-value yellow"
+                >
+                    0
+                </div>
+
+                <div class="stat-symbol">
+                    ◇
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    ICMP TRAFFIC
+                </div>
+
+                <div
+                    id="icmp"
+                    class="stat-value red"
+                >
+                    0
+                </div>
+
+                <div class="stat-symbol">
+                    △
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PACKET TERMINAL -->
+        <section class="packet-terminal">
+
+            <div class="terminal-header">
+
+                <div class="terminal-dots">
+
+                    <span class="dot red-dot"></span>
+                    <span class="dot yellow-dot"></span>
+                    <span class="dot green-dot"></span>
+
+                </div>
+
+                <div class="terminal-title">
+                    LIVE_PACKET_STREAM
+                </div>
+
+                <div
+                    id="packetCount"
+                    class="packet-count"
+                >
+                    0 PACKETS
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>TIME</th>
+                            <th>SOURCE IP</th>
+                            <th>DESTINATION IP</th>
+                            <th>PROTOCOL</th>
+                            <th>SIZE</th>
+                            <th>PAYLOAD</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="packetTable">
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="waiting"
+                            >
+                                <span>></span>
+                                WAITING FOR NETWORK TRAFFIC...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <span>
+            NEXUS-SNIFF <b>v1.0</b>
+        </span>
+
+        <span>
+            NETWORK SECURITY TOOL
+        </span>
+
+        <span>
+            STATUS:
+            <b>LOCAL</b>
+        </span>
+
+    </footer>
+
+
+    <!-- JS is in THE SAME FOLDER -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
